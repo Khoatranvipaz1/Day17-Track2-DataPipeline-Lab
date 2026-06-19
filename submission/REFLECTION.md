@@ -20,3 +20,13 @@ Answer briefly, in your own words. This is graded on reasoning, not length.
    one where the graph is overkill.
 
 _Write your answers below._
+
+Trần Văn Khoa - 2A202600827
+
+1. Bước dễ hỏng âm thầm nhất là flatten trace tree sang Bronze. Nếu thiếu span con hoặc sai parent/trace_id, dashboard vẫn có dòng nhưng cost, latency và outcome bị lệch. Tôi sẽ phát hiện bằng check số span/trace, tỉ lệ trace thiếu root, và so sánh rollup với log gốc.
+
+2. Nếu bỏ decontamination, model sẽ học lại prompt nằm trong eval set. Điểm eval tăng giả vì model đã thấy câu hỏi/đáp án trong train, nhưng khi gặp prompt mới ngoài phân phối thì chất lượng không tăng tương ứng.
+
+3. Với hệ thống chấm điểm tín dụng hoặc chống gian lận, feature như tổng chi tiêu, số lần hoàn tiền, hoặc số giao dịch bị dispute phải join theo thời điểm quyết định. Join naive có thể lấy thông tin xảy ra sau đơn vay/giao dịch.
+
+4. KG trả lời tốt câu multi-hop như widget liên quan accessory nào và nằm ở warehouse nào. Vector retrieval phù hợp hơn cho câu lookup trực tiếp như chính sách đổi trả widget trong bao nhiêu ngày; dùng graph cho câu đó là quá nặng.
